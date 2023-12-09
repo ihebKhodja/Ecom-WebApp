@@ -1,0 +1,267 @@
+[
+     
+  {
+    "name": "Casual Cotton T-Shirt",
+    "slug": "casual-cotton-t-shirt",
+    "description": "Comfortable and stylish cotton t-shirt for everyday wear.",
+    "price": 19.99,
+    "image": "./src/assets/tshirt.jpg",
+    "user": "JohnDoe",
+    "categories":  1
+},
+  {
+    "name": "Slim-fit Denim Jeans",
+    "slug": "slim-fit-denim-jeans",
+    "description": "Trendy slim-fit denim jeans for a modern look.",
+    "price": 39.99,
+    "image": "./src/assets/tshirt.jpg",
+    "user": "JaneSmith",
+    "categories":  1
+},
+  {
+    "name": "Formal Dress Shirt",
+    "slug": "formal-dress-shirt",
+    "description": "Classic formal dress shirt for professional occasions.",
+    "price": 29.99,
+    "image": "./src/assets/tshirt.jpg",
+    "user": "DavidMiller",
+    "categories":  1
+},
+  {
+    "name": "Athletic Jogging Pants",
+    "slug": "athletic-jogging-pants",
+    "description": "Durable and comfortable jogging pants for workouts.",
+    "price": 24.99,
+    "image": "./src/assets/tshirt.jpg",
+    "user": "EmilyJohnson",
+    "categories":  1
+},
+  {
+    "name": "Cozy Hooded Sweatshirt",
+    "slug": "cozy-hooded-sweatshirt",
+    "description": "Warm and cozy hooded sweatshirt for chilly days.",
+    "price": 34.99,
+    "image": "./src/assets/tshirt.jpg",
+    "user": "RobertBrown",
+    "categories":  1
+ },
+  {
+    "name": "Summer Beach Shorts",
+    "slug": "summer-beach-shorts",
+    "description": "Lightweight shorts perfect for a day at the beach.",
+    "price": 14.99,
+    "image": "./src/assets/tshirt.jpg",
+    "user": "SophiaWhite",
+    "categories":  1
+ },
+  {
+    "name": "Elegant Cocktail Dress",
+    "slug": "elegant-cocktail-dress",
+    "description": "Stylish cocktail dress for special occasions.",
+    "price": 49.99,
+    "image": "./src/assets/tshirt.jpg",
+    "user": "MichaelJones",
+    "categories":  1
+ },
+  {
+    "name": "Classic Polo Shirt",
+    "slug": "classic-polo-shirt",
+    "description": "Timeless polo shirt for a casual yet refined look.",
+    "price": 27.99,
+    "image": "./src/assets/tshirt.jpg",
+    "user": "OliviaSmith",
+    "categories":  1
+},
+  {
+    "name": "Leather Biker Jacket",
+    "slug": "leather-biker-jacket",
+    "description": "Edgy leather jacket for a bold and confident style.",
+    "price": 79.99,
+    "image": "./src/assets/tshirt.jpg",
+    "user": "MatthewClark",
+    "categories":  1
+},
+  {
+    "name": "Knitted Sweater",
+    "slug": "knitted-sweater",
+    "description": "Warm and stylish knitted sweater for the winter season.",
+    "price": 44.99,
+    "image": "./src/assets/tshirt.jpg",
+    "user": "EmmaTaylor",
+    "categories":  1
+ },
+  {
+    "name": "Cargo Pants",
+    "slug": "cargo-pants",
+    "description": "Functional cargo pants with plenty of pocket space.",
+    "price": 32.99,
+    "image": "./src/assets/tshirt_w.jpg",
+    "user": "DanielWilson",
+    "categories":  2
+ },
+  {
+    "name": "Floral Print Sundress",
+    "slug": "floral-print-sundress",
+    "description": "Light and breezy sundress with a floral print.",
+    "price": 37.99,
+    "image": "./src/assets/tshirt_w.jpg",
+    "user": "SophieBrown",
+    "categories":  2
+},
+  {
+    "name": "Striped Linen Shirt",
+    "slug": "striped-linen-shirt",
+    "description": "Casual striped linen shirt for a relaxed summer look.",
+    "price": 22.99,
+    "image": "./src/assets/tshirt_w.jpg",
+    "user": "ChristopherDavis",
+    "categories":  2
+  },
+  {
+    "name": "Yoga Leggings",
+    "slug": "yoga-leggings",
+    "description": "Comfortable leggings perfect for yoga and exercise.",
+    "price": 18.99,
+    "image": "./src/assets/tshirt_w.jpg",
+    "user": "AvaSmith",
+    "categories":  2
+  },
+  {
+    "name": "Classic Denim Jacket",
+    "slug": "classic-denim-jacket",
+    "description": "Timeless denim jacket for a versatile and cool style.",
+    "price": 59.99,
+    "image": "./src/assets/tshirt_w.jpg",
+    "user": "WilliamTaylor",
+    "categories":  2
+  },
+  {
+    "name": "V-Neck Cashmere Sweater",
+    "slug": "v-neck-cashmere-sweater",
+    "description": "Luxurious cashmere sweater with a flattering v-neck.",
+    "price": 69.99,
+    "image": "./src/assets/tshirt_w.jpg",
+    "user": "MiaJohnson",
+    "categories":  2
+  },
+  {
+    "name": "Cargo Shorts",
+    "slug": "cargo-shorts",
+    "description": "Casual cargo shorts with a laid-back style.",
+    "price": 26.99,
+    "image": "./src/assets/tshirt_w.jpg",
+    "user": "EthanMiller",
+    "categories":  2
+  },
+  {
+    "name": "Formal Black Suit",
+    "slug": "formal-black-suit",
+    "description": "Classic black suit for formal events and ceremonies.",
+    "price": 129.99,
+    "image": "./src/assets/tshirt_w.jpg",
+    "user": "IsabellaClark",
+    "categories":  2
+  },
+  {
+    "name": "Printed Maxi Dress",
+    "slug": "printed-maxi-dress",
+    "description": "Elegant maxi dress with a stylish print for special occasions.",
+    "price": 54.99,
+    "image": "./src/assets/tshirt_w.jpg",
+    "user": "JamesWilson",
+    "categories":  2
+  },
+  {
+    "name": "Cotton Polo Shorts",
+    "slug": "cotton-polo-shorts",
+    "description": "Casual cotton shorts with a polo-inspired design.",
+    "price": 20.99,
+    "image": "./src/assets/tshirt_w.jpg",
+    "categories":  2
+
+  },
+  {
+    "name": "Cozy Kids' Hoodie",
+    "slug": "cozy-kids-hoodie",
+    "description": "Warm and cozy hoodie for kids on chilly days.",
+    "price": 19.99,
+    "image": "./src/assets/tshirt_kids.jpg",
+    "user": "ParentFour",
+    "categories": 3
+  },
+  {
+    "name": "Kids' Floral Dress",
+    "slug": "kids-floral-dress",
+    "description": "Charming floral dress for little fashionistas.",
+    "price": 29.99,
+    "image": "./src/assets/tshirt_kids.jpg",
+    "user": "ParentFive",
+    "categories": 3
+  },
+  {
+    "name": "Kids' Active Shorts",
+    "slug": "kids-active-shorts",
+    "description": "Durable and comfortable shorts for active kids.",
+    "price": 16.99,
+    "image": "./src/assets/tshirt_kids.jpg",
+    "user": "ParentSix",
+    "categories": 3
+  },
+  {
+    "name": "Kids' Polo Shirt",
+    "slug": "kids-polo-shirt",
+    "description": "Casual and stylish polo shirt for young trendsetters.",
+    "price": 18.99,
+    "image": "./src/assets/tshirt_kids.jpg",
+    "user": "ParentSeven",
+    "categories": 3
+  },
+  {
+    "name": "Kids' Rainbow Sweater",
+    "slug": "kids-rainbow-sweater",
+    "description": "Colorful and fun sweater to keep kids warm and happy.",
+    "price": 22.99,
+    "image": "./src/assets/tshirt_kids.jpg",
+    "user": "ParentEight",
+    "categories": 3
+  },
+  {
+    "name": "Kids' Jogging Pants",
+    "slug": "kids-jogging-pants",
+    "description": "Comfortable jogging pants for active kids on the go.",
+    "price": 17.99,
+    "image": "./src/assets/tshirt_kids.jpg",
+    "user": "ParentNine",
+    "categories": 3
+  },
+  {
+    "name": "Kids' Pajama Set",
+    "slug": "kids-pajama-set",
+    "description": "Cozy pajama set for a good night's sleep.",
+    "price": 26.99,
+    "image": "./src/assets/tshirt_kids.jpg",
+    "user": "ParentTen",
+    "categories": 3
+  },
+  {
+    "name": "Kids' Sun Hat",
+    "slug": "kids-sun-hat",
+    "description": "Adorable sun hat to protect kids from the sun.",
+    "price": 9.99,
+    "image": "./src/assets/tshirt_kids.jpg",
+    "user": "ParentEleven",
+    "categories": 3
+  },
+  {
+    "name": "Kids' Raincoat",
+    "slug": "kids-raincoat",
+    "description": "Colorful and waterproof raincoat for rainy days.",
+    "price": 32.99,
+    "image": "./src/assets/tshirt_kids.jpg",
+    "user": "ParentTwelve",
+    "categories": 3
+  }
+
+
+]
+    

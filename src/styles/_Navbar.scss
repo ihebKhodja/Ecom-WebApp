@@ -1,0 +1,264 @@
+@use './variables' as v;
+
+
+
+.navbar{
+    font-size: 1.3rem;
+    font-family: v.$primary_font_family;
+    font-weight: 900;
+    font-style: italic;
+    margin-top: 0;   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 2rem;
+    background: v.$dark-gray;
+    position: relative;
+    
+    a {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: v.$primary_font_family;
+            font-weight: 900;
+            padding: 0em 2rem;
+            font-style: italic;
+            color: v.$white;
+    
+          
+            
+        }
+
+   
+    .navbar-start{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a{
+            border-inline: 1px solid v.$light-gray;
+            width: 5em;
+            height: 100%;
+            text-align: center  ;
+            margin: 0;
+            &:hover {
+                    color: v.$white;
+                    background: v.$light-gray;
+                }
+                
+            }
+            #navbar-icon {
+                // pointer-events: none;
+                border: none;
+                background: v.$dark-gray;
+
+            }
+            .hamburger{
+                display: none;
+            }
+
+            @media (max-width:40em){
+                .submenu-container{
+                    display: none;
+                }
+                .hamburger {
+                    display: flex;
+                    flex-direction:column;
+                    justify-content: center;
+                    gap:5px;
+                    align-items: center;
+                    width: 3em;
+                    height: 100%;
+                    position: relative;
+                    span{
+                        border-radius: 20px;
+                        background: v.$white;
+                        width: 70%;
+                        height: 10%;
+                        color: v.$white;
+                    }
+
+                    &:hover {
+                        background: v.$light-gray;
+                        .submenu-container{
+                                display:flex ;
+                                position: absolute;
+                                top:50%;
+                                right: 100px;
+                        }
+                    }
+                }
+
+            }
+            .submenu-container{
+                position: relative;
+                height: 100%;
+                &:hover .submenu-content{
+                    
+                    color: v.$white;
+                    background: v.$light-gray;
+                    display: block ;
+                    transition: ease-in;
+                    &:hover{
+                        background: v.$dark-gray;
+                        color: v.$black;
+    
+                    }
+                    
+                    
+                }
+                
+                .submenu-content{
+                    position: absolute;
+                    top: 100%;
+                    display: none;
+                    a{
+                        border: 1px solid v.$black;
+                    }
+                }
+            
+        }
+
+    .store-icon {
+        font-size: 1.5em;
+        font-weight: 900;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-transform: uppercase;
+        text-align: center;
+        position: relative;
+       
+        .icon {
+            position: relative;
+            top: 5px;
+            color: v.$hover-color;
+        }
+    }
+
+
+
+    }
+ 
+    
+
+
+    .searchbar{
+        background-color: v.$dark-gray;
+        width: 100%;
+     .search-form{
+                
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        
+        input{
+
+            width: 70%;
+            padding: 5px 25px 5px 5px;
+            /* Adjust padding to leave space for the icon */
+            // margin-right: 5px;
+            border: v.$white;
+            font-size: 0.8em;
+            border-radius:10px ;
+            font-family: v.$primary_font_family;
+           
+        }
+        @media (min-width:40em){
+
+            button{
+            color: v.$black;
+            background: transparent;
+            height: 100%;
+            width:30px;
+            position: absolute;
+            padding-inline: 0px;   
+            margin: 0;
+            border: none;
+            cursor: pointer;
+            right: 14%;
+            top: 50%;
+            transform: translateY(-50%);
+            // font-weight: 900;
+            .icon{
+                font-size: 2em;
+                width: auto;
+                // font-weight: 900;
+            }
+            &:hover {
+                // background: v.$hover-color;
+                color: v.$hover-color;
+            }
+        }
+        
+    }
+        }
+
+                 @media (max-width:40em) {
+                    input{
+                        display: none;
+                    }
+                    button{
+                        height: 100%;
+                        width:auto;
+                        font-size: 1.8em;
+                        background: transparent;
+                        color: v.$white;
+                        border: none;
+                        &:hover{
+                            color: v.$hover-color;
+                        }
+                    }
+                    .icon{
+                        padding-top: 10px;
+                        // color: v.$white;
+                    }
+        
+                 }
+    }
+    
+        .navbar-end {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 1.5em;
+           
+            .icon{
+                width: auto;
+                font-size: 1.3em;
+                padding-top:13px;
+            }
+   
+}
+
+
+
+       
+
+
+
+//         button {
+
+//             width: 5rem;
+//             border-radius: 1em;
+//             font-size: 1.6rem;
+//             font-weight: 900;
+//             background: v.$background-color;
+//             // font-weight: 900;
+
+//             &:hover {
+//                 background: v.$hover-color;
+//                 color: v.$background-color;
+//             }
+// }
+   
+    
+}
+
+
+

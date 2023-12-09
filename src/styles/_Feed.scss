@@ -1,0 +1,18 @@
+.feed-container {
+    width: 90%;
+    margin: 1em auto;
+    border: 1px black;
+    .title{
+        margin: 0 3em;
+        text-align: left;
+    }
+}
+
+.products_list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+    overflow: hidden;
+}

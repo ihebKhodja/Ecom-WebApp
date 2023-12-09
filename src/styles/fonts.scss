@@ -1,0 +1,46 @@
+
+
+@font-face {
+    font-family: 'FuturaPT';
+    src: url('../fonts/FuturaPTExtraBold.otf') format('opentype');
+    src:local('../fonts/FuturaPTExtraBold.otf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FuturaPT';
+    src: url('../fonts/FuturaPTExtraBoldOblique.otf') format('opentype');
+    src: local('../fonts/FuturaPTExtraBoldOblique.otf');
+    font-weight: bold;
+    font-style: oblique;
+}
+
+@font-face {
+    font-family: 'FuturaPT';
+    src: url('../fonts/FuturaPTLight.otf') format('opentype');
+    font-weight: 100;
+    /* Lighter weight */
+    font-style: normal;
+}
+@font-face {
+    font-family: 'FuturaPT';
+    src: url('../fonts/FuturaPTLightOblique.otf') format('opentype');
+    font-weight: 100;
+    /* Lighter weight */
+    font-style: oblique;
+}
+
+@font-face {
+    font-family: 'FuturaPT';
+    src: url('../fonts/FuturaPTMedium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FuturaPT';
+    src: url('../fonts/FuturaPTMediumOblique.otf') format('opentype');
+    font-weight: normal;
+    font-style: oblique;
+}
