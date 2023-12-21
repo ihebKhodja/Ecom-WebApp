@@ -14,7 +14,7 @@ export const useLogin = ()=>{
         ).then(function(response){
            
                 const json= response.data
-                console.log('login json',json)
+                // console.log('login json',json)
                 dispatch({type: ACTIONS_AUTH.LOGIN, payload:json})
             
         }).catch(function(er){

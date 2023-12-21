@@ -13,16 +13,10 @@ const Register = () => {
     email:'',
     password:'',
     password_confirmation:'',
-    role:'client'
+    is_admin:''
   });
 
-  // useEffect(()=>{
 
-  //   if(isSubmited){
-  //     // await register(data)
-  //     console.log('submmited')
-  //   }
-  // }, [isSubmited]);
 
    const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,18 +31,14 @@ const Register = () => {
       e.preventDefault();
       if(data.password == data.password_confirmation)
       {
-        
         setisSubmited(true)
         await register(data)
-
-        // console.log('eror')
-
-        
-        // console.log('registration succeded');
+        // navigate to home page
       }
       else{
         console.log(error)
-        console.log('passwords do not match');
+        console.log('passwords do not match'); 
+        // user's passwords do not match
       }
       
   }

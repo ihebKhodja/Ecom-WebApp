@@ -5,7 +5,7 @@ const Product = ({product}) => {
   
   // console.log(props)
   return (
-    <div onClick={console.log('go to product details')} className='product_item'>
+    <div className='product_item'>
 
       <img src={product.image} />
         <div className='icon'>

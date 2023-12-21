@@ -5,6 +5,8 @@ import { useState } from "react";
 import { FaRegUser } from "react-icons/fa";
 import { PiHandbagSimpleThin } from "react-icons/pi";
 import { IoSearchSharp } from "react-icons/io5";
+import { RiLoginBoxLine } from "react-icons/ri";
+
 import { FaShoppingBag } from "react-icons/fa";
 import { PiBagSimpleBold } from "react-icons/pi";
 
@@ -72,6 +74,9 @@ function Navbar() {
       <div className="navbar-end">
         <Link to={'/login'}>
           <FaRegUser />
+        </Link>
+        <Link to={'/signup'}>
+          <RiLoginBoxLine />
         </Link>
         <Link to={'/cart'}>
           <div className="cart-icon"><PiBagSimpleBold className="icon"/>  </div>

@@ -1,27 +1,25 @@
 import React, { useState } from 'react'
 import { useAuthContext } from './useAuthContext'
 import axios from 'axios';
-import { ACTIONS_AUTH } from '../constants';
+import { ACTIONS_AUTH } from '../Constants';
 
 export const useRegister = () => {
     const[error, setError]= useState(null);
     const {dispatch} =useAuthContext()
 
     const register = async (data)=>{
-         await axios.post('/register',
-         data
-        ).then(function(response){
-            console.log(response.headers)
-            const json= response.data;
-            console.log('register json',json)
-            dispatch({type:ACTIONS_AUTH.LOGIN, payload:json})
+      
+      await axios.post('/register',data
+      ).then(async function(response){
+
+        const json= await response.data;
+
+        dispatch({type:ACTIONS_AUTH.LOGIN, payload:json})
         
-        }
-        ).catch( function(er){
-            console.log(er)
-            setError(er)
-        }
-        );
+      }).catch(function(error){
+        setError(error.response)
+      })
+        
     }
     
   return {register, error}

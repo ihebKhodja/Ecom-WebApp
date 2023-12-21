@@ -8,7 +8,7 @@ const authReducer= (state, action)=>{
         }
     }
     else if(action.type ==ACTIONS_AUTH.LOGOUT){
-        return {user: {}, token: null}
+        return {'user': {}, 'token': null}
     }
     else{
         return state
@@ -18,8 +18,8 @@ const authReducer= (state, action)=>{
 
 const AuthContextProvider = ({children}) => {
     const [state, dispatch]= useReducer(authReducer, {
-    user:{},
-    token:null
+    'user':{},
+    'token':null
     })
     // const [authUser, setAuthUser]=useState({user:{},token:''});
     return (
