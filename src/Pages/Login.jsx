@@ -1,10 +1,17 @@
 import { useAuthContext } from "../Hooks/useAuthContext"
-import { useState } from "react";
+import {useState } from "react";
 import { useLogin } from "../Hooks/useLogin";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom"
+import '../styles/_Login.scss';
+
+
 function Login() {
-  const {...state}= useAuthContext()
-  const {login, error}= useLogin()
-  console.log(state)
+  const navigate = useNavigate()
+  const {user}= useAuthContext()
+
+  const {Login, error}= useLogin()
+
    const [data, setData]=useState({
      email:'',
      password:'',  
@@ -17,26 +24,34 @@ function Login() {
       [name]: value,
     });
   };
-
-   const handleSubmit= async (e)=> {
-      e.preventDefault();
-      if(error)
+  
+  const handleSubmit= async (e)=> {
+    e.preventDefault();
+    await Login(data)
+     if (error){
         console.log(error)
-      await login(data)
-      console.log('login state', {...state})
-
-      // console.log(reponse)
-      // console.log('registration succeded');
+        window.location.reload();
+      }
+    else {  
+      if(user)
+      navigate('/')
+    }
     
-      
+  
   }
   
+  
+   
+
   return (
-    <div >
+    <section >
+    <div className="container">
+
       <h2>Sign in</h2>
       <form className="login">
          <label>Email</label>
       <input name='email'
+      placeholder="user@email.com"
             type='email'
             value={data.email}     
             onChange={handleChange} 
@@ -45,13 +60,16 @@ function Login() {
       <label>Passowrd</label>
       <input name='password'
             type='password'
+            placeholder="enter your password"
             value={data.password}     
             onChange={handleChange} 
 
       />
       <button onClick={handleSubmit}>Login</button>
+      <p>Create an account, <Link to={'/signup'}>Click here</Link></p>
       </form>
     </div>
+    </section>
   )
 }
 

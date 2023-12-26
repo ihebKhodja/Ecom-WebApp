@@ -1,4 +1,4 @@
-import { createContext, useEffect, useReducer, useState } from "react";
+import { createContext, useReducer } from "react";
 import { ACTIONS_AUTH } from "../Constants";
 
 export const AuthContext= createContext('');
@@ -21,7 +21,6 @@ const AuthContextProvider = ({children}) => {
     'user':{},
     'token':null
     })
-    // const [authUser, setAuthUser]=useState({user:{},token:''});
     return (
         <AuthContext.Provider value={{...state, dispatch}}>
                 {children}

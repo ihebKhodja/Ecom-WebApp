@@ -1,0 +1,62 @@
+@use '../styles/variables' as v;
+
+section{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100vw;
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-content: start;
+        margin-top: 10vh;
+        background-color: v.$gray;
+        width: 70vw;
+        padding-block: 1rem;
+        border-radius: 10px;
+        height: fit-content;
+        @media (min-width:40em) {
+        width: 55vw;
+        }
+    
+        
+    h2{
+            margin-bottom: 1em;
+    }
+    form{
+        height: max-content;
+        
+        label{
+        text-align:left;
+            font-size: 1.2rem;
+            width: 80%;
+        }
+        input{
+            
+            width: 80%;
+            padding: 0.5rem;
+            border-radius: 10px;
+            font-size: 1.05rem;
+            border: 0.3px;
+
+        }
+           button {
+               border: transparent;
+               border-radius: 10px;
+               font-size: 1rem;
+               font-weight: bold;
+               padding: 0.5rem 1rem;
+               margin-block: 0.5em 1em;
+               color: v.$white;    
+               background: v.$black;
+               &:hover {
+                   font-size: 1.055rem;
+                    background: v.$dark-gray;
+                    
+               }
+    }
+}
+}
+}

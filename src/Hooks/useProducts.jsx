@@ -5,11 +5,27 @@ import {ACTION_PRODUCTS } from "../Constants"
 
 export const useProducts= ()=>{
     const context = useContext(ProductsContext);
+
     if(!context){
         throw Error('useProducts must be inside ProductsContextProvider')
     }else{
     const [error, setError]=useState()
     const {dispatch}=useContext(ProductsContext)
+
+    const getProduct= (id, list)=>{
+          const productId = list.map((product)=>{
+            if(product.id ==id )
+            return product
+        })
+            if(productId){
+                for (let i = 0; i < productId.length; i++) {
+                const productitem = productId[i];
+                if (productitem) return productitem    
+                }            
+            }
+            else 
+                return null
+    }
 
     const getAllProducts= async ()=>{
         await axios.get('/products')
@@ -24,7 +40,7 @@ export const useProducts= ()=>{
         })
     }
     
-    return {getAllProducts, error}
+     return {getAllProducts, getProduct, error}
     }
     
     

@@ -36,7 +36,8 @@ function Navbar() {
             Mitoro</div>
         </Link>
 
-        <div className="submenu-container"> 
+
+        {/* <div className="submenu-container"> 
             <Link to={'/women'}>Women</Link>
             <div className="submenu-content"> 
               <Link to={'/woman/dresses'} >Dresses</Link>
@@ -55,7 +56,7 @@ function Navbar() {
             <Link to={'/men/accessories'}>Accessories</Link>
 
           </div>
-        </div>
+        </div> */}
 
 
       </div>
@@ -75,9 +76,9 @@ function Navbar() {
         <Link to={'/login'}>
           <FaRegUser />
         </Link>
-        <Link to={'/signup'}>
+        {/* <Link to={'/signup'}>
           <RiLoginBoxLine />
-        </Link>
+        </Link> */}
         <Link to={'/cart'}>
           <div className="cart-icon"><PiBagSimpleBold className="icon"/>  </div>
         </Link>

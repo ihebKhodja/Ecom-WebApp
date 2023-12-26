@@ -10,13 +10,14 @@ import Register from './Pages/Register'
 import { Home } from './Pages/Home';
 import { CategoryOne } from './Pages/CategoryOne';
 import { CategoryTwo } from './Pages/CategoryTwo';
+import { ProductDetails } from './Pages/ProductDetails';
 
 function App() {
 
   return (
     <div className='app'>
       <AuthContextContextProvider>  
-      <ProductsContextProvider>
+      <ProductsContextProvider >
 
         <BrowserRouter >
           <Navbar />
@@ -27,6 +28,7 @@ function App() {
             <Route path='/cart' element={<Cart/>} />
             <Route path='/men' element={<CategoryOne/>} />
             <Route path='/women' element={<CategoryTwo/>} />
+            <Route path='/product/:id' element={<ProductDetails/>} />
 
           </Routes>
           
