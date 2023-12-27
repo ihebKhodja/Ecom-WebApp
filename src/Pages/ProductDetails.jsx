@@ -12,7 +12,6 @@ export const ProductDetails = () => {
   const {...state }=useContext(ProductsContext)
   const {user, token}=useAuthContext()
   const {getProduct, error}= useProducts()  
-  const[cartItem, SetCartItem]=useState({})
 
    const [product, setProduct]= useState()
   const [isLoading, setIsloading]=useState(false)
@@ -22,26 +21,8 @@ export const ProductDetails = () => {
     // 
 
   }
-    const addToCart= async()=>{
-    await axios.post(`/cartitems/add/${id}`,
-    {'quantity':quantity} ,
-    {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
 
-    }).then(async function(response){
-      const json = await response.data
-      if(json){
-        // dispatch Cart Items context 
-        console.log(json)
-        // popup 
-      }
-    }).catch(function(error){
-      console.error(error)
-    })
 
-    }
   const handleAddingToCart =async()=>{
     console.log('added to cart')
     if(user){
@@ -50,6 +31,27 @@ export const ProductDetails = () => {
     }
     // //  add to cart 
   }
+
+    const addToCart= async()=>{
+      await axios.post(`/cartitems/add/${id}`,
+      {'quantity':quantity} ,
+      {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+
+      }).then(async function(response){
+        const json = await response.data
+        if(json){
+          // dispatch
+          console.log(json)
+          // pop
+        }
+      }).catch(function(error){
+        console.error(error)
+      })
+
+    }
 
 
 const fetchData = ()=>{

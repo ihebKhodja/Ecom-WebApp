@@ -13,9 +13,12 @@ export const useProducts= ()=>{
     const {dispatch}=useContext(ProductsContext)
 
     const getProduct= (id, list)=>{
-          const productId = list.map((product)=>{
-            if(product.id ==id )
-            return product
+        try{
+            const productId = list?.map((product)=>{
+                if(product.id ==id ){
+                    return product
+
+            }
         })
             if(productId){
                 for (let i = 0; i < productId.length; i++) {
@@ -24,7 +27,10 @@ export const useProducts= ()=>{
                 }            
             }
             else 
-                return null
+            return []
+        }catch(error){
+            console.log(error)
+        }
     }
 
     const getAllProducts= async ()=>{
