@@ -13,6 +13,11 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1em;
+    margin: 0 auto;
+    gap: 0.5em;
     overflow: hidden;
+    @media (min-width:40em) {
+        width: 70%;
+        // 
+    }
 }

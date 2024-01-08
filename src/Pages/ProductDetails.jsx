@@ -4,17 +4,34 @@ import React, { useEffect, useContext, useState} from 'react'
 import { ProductsContext } from "../Contexts/ProductsContext"
 import { useProducts } from "../Hooks/useProducts"
 import { useAuthContext } from "../Hooks/useAuthContext"
+import { CartItemsContext } from "../Contexts/CartItemsContext"
+import '../styles/_ProductDetails.scss'
+import { IoMdAdd } from "react-icons/io";
+import { IoRemove } from "react-icons/io5";
+
+
 
 export const ProductDetails = () => {
 
   let {id} = useParams()
   const[quantity, setQuantity]=useState(1)
+  
   const {...state }=useContext(ProductsContext)
   const {user, token}=useAuthContext()
   const {getProduct, error}= useProducts()  
+  const {dispatch} = useContext(CartItemsContext)
 
    const [product, setProduct]= useState()
   const [isLoading, setIsloading]=useState(false)
+ 
+  const handleAdd=()=>{
+        setQuantity(quantity+1)
+    }
+
+    const handleMinus= ()=>{
+        if(quantity >1)
+            setQuantity(quantity - 1)
+    }
 
     const hanldeBuying =()=>{
     console.log('thanks for buying')
@@ -26,8 +43,11 @@ export const ProductDetails = () => {
   const handleAddingToCart =async()=>{
     console.log('added to cart')
     if(user){
-      addToCart()
-    console.log('send')
+      { 
+        addToCart()
+        // pop up 
+        console.log('send')
+      }
     }
     // //  add to cart 
   }
@@ -43,7 +63,6 @@ export const ProductDetails = () => {
       }).then(async function(response){
         const json = await response.data
         if(json){
-          // dispatch
           console.log(json)
           // pop
         }
@@ -72,10 +91,8 @@ useEffect (()=>{
 }, [isLoading])
 
 
-
-/**
- * Or we use get request from the server
- *  */ 
+//  * Or we use get request from the server
+//  *  */ 
 
   // const getProductByID= async (id)=>{
   //       await axios.get(`/products/${id}`)
@@ -94,38 +111,47 @@ useEffect (()=>{
 
   
   return (
-    <div>
-    {isLoading ? 
+<section className="product-page">
+      {isLoading ? 
     
     <div className='product_item'>
+        <div className="image-container">
+           <img src={product.image} alt="product's image"/>
+        </div>
+        <div className='info'>
+          <div className="details">
+                <h2>
+                  { product.name}
+                </h2>
+                <p>
+                  {product.description}
+                </p>
+                <div className='prices'>
 
-      <img src={product.image} />
-      <div className='info'>
-            <h2>
-               { product.name}
-            </h2>
-            <p>
-               {product.description}
-            </p>
-            <div className='price'>
-              <p>{product.price}</p> 
-              <p>350$</p>{/* Old price if there is promotion */}
-            </div>
-            <div>
-              Quantity chose
-            </div>
-            <div className='buttons'>
-              <button onClick={hanldeBuying}>Buy</button>
-              <button onClick={handleAddingToCart}>Add to Cart</button>
-            </div>
+                 <p>{product.price} $ </p> 
+
+                </div>
+                <div className="quantity">            
+                  <p> Quantity:</p>
+                   <div className="modify-quantity">
+                    <button onClick={handleMinus}> <IoRemove /> </button>
+                      {quantity}
+                    <button onClick={handleAdd}><IoMdAdd/> </button>               
+                  </div>
+               </div>
+                <div className='add-to-cart'>
+                  <button onClick={handleAddingToCart}>Add to Cart</button>
+                </div>
           </div>
-      </div>
+           
+        </div>
+    </div>
       :
       <div>
         Loading animation
       </div>
 
     }
-    </div>
+</section>
   )
 }

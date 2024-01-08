@@ -1,11 +1,9 @@
-import  { useContext, useEffect, useState } from 'react'
-import { AuthContext } from '../Contexts/AuthContext'
+import  { useState } from 'react'
 import { useRegister } from './../Hooks/useRegister';
 import { useNavigate } from "react-router-dom";
-import '../styles/_Register.scss';
+import '../styles/_Auth.scss';
 
 const Register = () => {
-  // const [Authcontext] = useContext(authUser)
   const navigate= useNavigate()
   const [isSubmited, setisSubmited] =useState(false);
   const {register, error}=useRegister()
@@ -47,7 +45,7 @@ const Register = () => {
   }
   
   return (
-    <section>
+    <section className='register'>
     <div className='container'>
 
       <h2> Create an Account</h2>

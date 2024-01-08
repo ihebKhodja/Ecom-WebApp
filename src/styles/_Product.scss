@@ -1,60 +1,98 @@
 @use '../styles/variables' as v;
+
 .product_item {
-    margin:1.5em 0em;
-    font-weight: normal;
     display: flex;
     flex-direction: column;
-    padding: 0.5rem;
+    justify-content: space-between;
+    overflow: hidden;
     gap: 0;
-    width: 18em;
+    width: clamp(10rem, 10vw + 0.5rem, 60rem);
+    min-height: 40vh;
+    margin: 0.5em 0em;
+    font-weight: normal;
+    background: v.$gray-two;
+    box-shadow: 0 0 5px rgba(1, 1, 1, 0.1);
     border-radius: 2px;
-    background: v.$gray;
-    box-shadow: 1px black;
-    border-radius: 10px;
-    
-    img {
-            border-radius: 5px;
-            aspect-ratio: 1;
+   
+    &:hover{
+        opacity: 0.6;
+    }
+    .image-container{
             width: 100%;
+            overflow: hidden;
+
+        img {
+            border-radius: 10px;
+            object-fit: cover;
+            width: 100%;
+            display: block;
+            height:15em;
             padding: 0rem;
+            // aspect-ratio: 3/2;
             padding-bottom: 0;
+            transition: 1s ease;
+            width: 100%;
+            overflow: hidden;
+            &:hover{
+                opacity: 0.6;
+                // object-fit: cover;
+                transition: 1s ease;
+                transform: scale(1.06);
+                overflow: hidden;
+            }
         }
+    }
     
         .info {
             margin: 0;
-            padding: 0.5rem;
+            padding-block: 0.5rem;
             text-align: left;
             overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            flex-wrap: nowrap;
+            align-items: start;
+            gap:0;
+            font-size: 1rem;
             
 
             h2 {
-                // width: fit-content;
                 font-weight: normal;
                 margin: 0;
-                padding: 0;
+                padding-left: 0.5rem;
+                font-size: 1.3rem;
                 width: 100%;
-                // margin: 1em auto;
             }
-        
-            p {
-                // margin: 1px ;
+            .price {
+                padding:0;
                 display: flex;
-                align-items: center;
-                padding-inline: 1rem;
-                font-weight: bold;
+                flex-direction: column;
+                border-right: 1px solid v.$black;
+                    p {
+                    display: flex;
+                    align-items: center;
+                    padding-inline: 0.5rem;
+                    font-weight: bold;
 
-                &:first-child{
-                    color: v.$red;
-                    font-size: 1.1em;
+                    &:first-child{
+                        color: v.$red;
+                        font-size: 1.1em;
+                    }
+                    &:last-child{
+                        text-decoration: line-through;
+                    }
                 }
-                &:last-child{
-                    text-decoration: line-through;
-                }
+                    
             }
-            .price{
-                display: flex;
-                flex-direction: row;
+
+            button{
+                background: transparent;
+                font-size: clamp(0.5rem, 1vw + 0.5rem, 0.9rem);
             }
+
+
+
             .buttons{
                 display: flex;
                 justify-content: center;
@@ -66,7 +104,7 @@
                     font-weight: bold;
                     padding:0.5rem 1rem;
                     // margin-right: 1rem;
-                   
+                    
                     // Buy Button
                     &:first-child{ 
                         background: v.$red;
@@ -85,7 +123,7 @@
                             }
                     }
 
-
+                    
                 }
             }
         }

@@ -2,14 +2,14 @@ import './App.scss'
 import AuthContextContextProvider from './Contexts/AuthContext';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ProductsContextProvider } from './Contexts/ProductsContext';
-import { CartIemssContextProvider } from './Contexts/CartItemsContext';
-
+import { CartItemsContextProvider } from './Contexts/CartItemsContext';
 import Navbar from './Components/Navbar'
 import Login from './Pages/Login';
 import Cart from './Pages/Cart';
 import Register from './Pages/Register'
 import { Home } from './Pages/Home';
 import { ProductDetails } from './Pages/ProductDetails';
+import { Order } from './Pages/Order';
 
 function App() {
 
@@ -17,7 +17,7 @@ function App() {
     <div className='app'>
       <AuthContextContextProvider>  
       <ProductsContextProvider >
-      <CartIemssContextProvider>
+      <CartItemsContextProvider>
 
         <BrowserRouter >
           <Navbar />
@@ -29,11 +29,12 @@ function App() {
             <Route path='/cart' element={<Cart/>} />
             <Route path='/product/:id' element={<ProductDetails/>} />
             <Route path='/cart' element={<Cart/>} />
+            <Route path='/order' element={<Order/>} />
 
           </Routes>
-          
         </BrowserRouter>
-      </CartIemssContextProvider>
+
+      </CartItemsContextProvider>
       </ProductsContextProvider>
       </AuthContextContextProvider>
     </div>

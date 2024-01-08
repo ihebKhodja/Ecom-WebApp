@@ -1,0 +1,84 @@
+@use '../styles/variables' as v;
+
+ .searchbar {
+     background-color: v.$dark-gray;
+     width: 100%;
+
+     .search-form {
+
+         height: 100%;
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         position: relative;
+
+         input {
+
+             width: 70%;
+             padding: 5px 25px 5px 5px;
+             /* Adjust padding to leave space for the icon */
+             // margin-right: 5px;
+             border: v.$white;
+             font-size: 0.8em;
+             border-radius: 10px;
+             font-family: v.$primary_font_family;
+
+         }
+
+         @media (min-width:40em) {
+
+             button {
+                 color: v.$black;
+                 background: transparent;
+                 height: 100%;
+                 width: 30px;
+                 position: absolute;
+                 padding-inline: 0px;
+                 margin: 0;
+                 border: none;
+                 cursor: pointer;
+                 right: 14%;
+                 top: 50%;
+                 transform: translateY(-50%);
+
+                 // font-weight: 900;
+                 .icon {
+                     font-size: 2em;
+                     width: auto;
+                     // font-weight: 900;
+                 }
+
+                 &:hover {
+                     // background: v.$hover-color;
+                     color: v.$hover-color;
+                 }
+             }
+
+         }
+     }
+
+     @media (max-width:40em) {
+         input {
+             display: none;
+         }
+
+         button {
+             height: 100%;
+             width: auto;
+             font-size: 1.8em;
+             background: transparent;
+             color: v.$white;
+             border: none;
+
+             &:hover {
+                 color: v.$hover-color;
+             }
+         }
+
+         .icon {
+             padding-top: 10px;
+             // color: v.$white;
+         }
+
+     }
+ }

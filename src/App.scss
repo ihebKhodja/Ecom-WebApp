@@ -1,7 +1,4 @@
-@use './styles/Navbar'; 
 @use './styles/variables' as v;
-@use './styles/Product';
-@use './styles/Feed';
 // @use './styles/fonts';
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,500;0,900;1,100;1,400;1,700;1,900&display=swap');
@@ -29,6 +26,7 @@ body{
   // padding: 1rem;
   font-family: v.$primary_font_family  ;
   text-align: center;
+  background-color: v.$gray;
   margin: 0;
 }
 .app{
@@ -40,23 +38,7 @@ body{
   /* margin-top: 0; */
   
 }
-.register{
-  display: flex;
-  flex-direction:column;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
 
-}
-
-.login {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  
-  justify-content: center;
-  align-items: center;
-}
 button{
   width: 10em;
 }

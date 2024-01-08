@@ -5,15 +5,26 @@
 
 // $font:
 
-$black:black;
+$black:#393E46;
+$green:#6D9886;
+$green-2: #479072;
+$gray:#F7F7F7;
+$beige:#F2E7D5;
+$primary_font_family: 'Jost', sans-serif;
+
+
+
 $dark-gray:#2d2d2d;
 $light-gray:#525050;
 $red:rgb(212, 29, 29);
 $red2:rgb(160, 27, 27);
 $white:#FFFFFF;
-$gray:#EEEEEE;
 $gray-two:#DDDDDD;
 $background-color: #F8F8F8;
 $background-color-2: #edebeb;
+$blue:rgb(85, 85, 189);
+
 $hover-color:rgb(32, 37, 208);
-$primary_font_family: 'Jost', sans-serif;
+
+$break-point:40em;
+$break-point2:70em;
