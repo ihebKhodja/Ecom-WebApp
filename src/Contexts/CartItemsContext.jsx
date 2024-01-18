@@ -8,12 +8,12 @@ const cartItemsReducer = (state, action)=>{
     case 'get_all':
         return {
         cartItems: action.payload.cartItems,
-        cartTotal:action.payload.cartTotal}
-
+        cartTotal:action.payload.cartTotal
+    }
+    case 'update_total':
+        return{...state, cartTotal:action.payload}
     case 'delete':
-        return{
-            cartItems:action.payload.cartItems
-        }
+        return{ ...state, cartItems: action.payload }
         
     case 'update':
         return {...state, cartItems: state.cartItems.map((item)=>
@@ -31,7 +31,9 @@ const cartItemsReducer = (state, action)=>{
 
 export const CartItemsContextProvider = ({children}) =>{
     const [state, dispatch] =useReducer(cartItemsReducer,
-    {cartItems:[],cartTotal:0}  
+    {cartItems:[],
+        // cartTotal:0
+    }  
     )
     return(
         <CartItemsContext.Provider value={{...state, dispatch}}>

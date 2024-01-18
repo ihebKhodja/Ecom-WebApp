@@ -1,0 +1,41 @@
+@use '../styles/variables' as v;
+.order{
+    margin-block: 1em;
+    width: 100vw;
+    display: grid;
+    gap: 0;
+    align-items: start;
+    @media (min-width:40em) {
+        grid-template-columns: 60% 30%;
+        
+    }
+    .total{
+
+        width: 70%;
+        margin: 0 auto;
+        display: flex; 
+        justify-content: space-between;
+        align-items: center;
+        font-size: clamp(1rem, 1.5vw + 0.25rem, 2rem);
+        // border-radius: 10px;
+        border-bottom: 1px solid v.$gray-two;
+        padding: 0.5rem;
+        height: fit-content;
+        font-weight: normal;
+        .price{
+            font-weight: bold;
+            
+        }
+        @media (min-width:40em) {
+          margin-top: 25%;
+        
+    }
+    }
+    .container{
+        h2{
+            margin-bottom: 1rem;
+        }
+
+
+    }
+}

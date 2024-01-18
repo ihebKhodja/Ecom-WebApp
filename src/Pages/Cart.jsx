@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react'
+import '../styles/_Cart.scss'
 import axios from 'axios'
 import { CartItem } from '../Components/CartItem'
 import { useContext } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { CartItemsContext } from '../Contexts/CartItemsContext'
 import { useAuthContext } from '../Hooks/useAuthContext'
-import '../styles/_Cart.scss'
 import { MdDelete } from "react-icons/md";
-import { IoTrophy } from 'react-icons/io5'
+import Loader from './Loader'
 
 const Cart = () => {
-  
+  const navigate = useNavigate()
+
   const {...state}=useContext(CartItemsContext)
   const {dispatch}=useContext(CartItemsContext)
 
@@ -25,11 +27,19 @@ const Cart = () => {
         }
         ).then(async function(response){
             const json =await response.status;
-            console.log(json,' cart item ', id , 'has been deleted' )  
-            const updatedCartItems = state.cartItems.filter(item => item.id !== id);
-            dispatch({type:'get_all', payload:[updatedCartItems, state.cartTotal]})
-            // updateTotal()
 
+            if(json){
+              console.log(json,' cart item ', id , 'has been deleted' )  
+              await updateTotal()
+              const updatedCartItems = state.cartItems.filter(item => item.id !== id);
+// check if the cartItems is empty
+              if(!updatedCartItems || updatedCartItems.length === 0)
+              {
+                dispatch({type:'get_all', payload:[updatedCartItems, 0]})
+              }
+
+              dispatch({type:'delete', payload:updatedCartItems})
+            }
         }).catch(function(error){
             console.log(error)
         })
@@ -43,15 +53,14 @@ const Cart = () => {
         }
       }).then(async function(response){
           const json = await response.data
-          dispatch({type:'delete', payload:json.cartItems})
-          setIsloading(true)
+          console.log(json)
+          dispatch({type:'update_total', payload:json.cartTotal})
         }).catch(function(error){
           console.log(error)
         })
       }
   }
   
-
   const getItems= async()=>{
     if(token){
       await axios.get('/cartitems/user',{
@@ -59,24 +68,33 @@ const Cart = () => {
           'Authorization': `Bearer ${token}`
         }
       }).then(async function(response){
-          const json = await response.data
+        const json = await response.data
           dispatch({type:'get_all', payload:json})
-          setIsloading(true)
+          setIsloading(true)        
+          
         }).catch(function(error){
           console.log(error)
+          console.log('Cart is empty') // component
         })
+      }
+      else{
+        console.log('user is not logged In')
       }
   }
 
-// useEffect(()=>{
-//   updateTotal()
 
-// },[state.cartItems])
+// Checkout button
+ const handleCheckout = async()=>{
+   navigate('/checkout')
+     
+ }
+
 
 useEffect( ()=>{
   getItems()
+
 // eslint-disable-next-line react-hooks/exhaustive-deps
-},[isLoading, state.cartItems])
+},[isLoading])
 
   return (
     <div>
@@ -84,7 +102,6 @@ useEffect( ()=>{
       { isLoading ?
     <section className='cart-list'>
       <div className='cart-item-wrapper'>
-      {/* <h2>Cart ({state.cartItems.length})</h2> */}
        {  Array.isArray(state.cartItems)? state.cartItems.slice().reverse().map((cartItem, index)=>
               (
                 <div className='cart-item-container' key={cartItem.id}>
@@ -105,16 +122,15 @@ useEffect( ()=>{
 
       <div className='cart-total'>
           <div>
-            <p>Subtotal</p>
-            <p>Price in {state.cartTotal}$</p>
+          <p>The Total Price:</p>
+            <p>{state.cartTotal ? state.cartTotal : 0 } $</p>
           </div>
-          <p>The total is tat at</p>
-          <button>Click to purchase</button>
+          <button onClick={()=>handleCheckout()}>Click to purchase</button>
       </div>
     </section>
       :
 
-      <div>Loading animation</div>
+      <Loader />  
     }
     </div>
   )

@@ -1,0 +1,67 @@
+@use '../styles/variables' as v;
+
+
+.popup-container{
+    display: flex;
+    justify-content: center;
+    color: v.$black;
+    font-weight: normal;
+    width: auto;
+    padding: 0;
+    margin: auto;
+    border-bottom:4px solid v.$green;
+    // border: 2px solid transparent;
+    // transform: scale(0);
+    opacity: 0;
+    // transition: opacity 4s ease-in-out;
+    animation: drawBorder 4s ease-in-out;
+   
+
+    
+    p {
+        padding-left:0 ;
+        margin-left: 0;
+    }
+
+  
+
+@keyframes drawBorder {
+     
+    100% {
+        opacity: 1;
+        transform: scale(1.1);    
+    }
+}
+//   0% {
+//     border-top-color: transparent;
+//     border-right-color: transparent;
+//     border-bottom-color: transparent;
+//     border-left-color: transparent;
+//   }
+//   25% {
+//     border-top-color: #3498db;
+//     border-right-color: transparent;
+//     border-bottom-color: transparent;
+//     border-left-color: transparent;
+//   }
+//   50% {
+//     border-top-color: #3498db;
+//     border-right-color: #3498db;
+//     border-bottom-color: transparent;
+//     border-left-color: transparent;
+//   }
+//   75% {
+//     border-top-color: #3498db;
+//     border-right-color: #3498db;
+//     border-bottom-color: #3498db;
+//     border-left-color: transparent;
+//   }
+//   100% {
+//     border-top-color: #3498db;
+//     border-right-color: #3498db;
+//     border-bottom-color: #3498db;
+//     border-left-color: #3498db;
+//   }
+// }
+
+}

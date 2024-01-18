@@ -1,90 +1,94 @@
-import  { useState } from 'react'
 import { useRegister } from './../Hooks/useRegister';
 import { useNavigate } from "react-router-dom";
 import '../styles/_Auth.scss';
+import { useForm } from 'react-hook-form'
 
 const Register = () => {
   const navigate= useNavigate()
-  const [isSubmited, setisSubmited] =useState(false);
-  const {register, error}=useRegister()
+  const {singin, error}=useRegister()
+  const {register,reset,formState: { errors }, handleSubmit}=useForm()
 
-  const [data, setData]=useState({
-    name:'',
-    email:'',
-    password:'',
-    password_confirmation:'',
-    is_admin:''
-  });
-
-
-
-   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setData({
-      ...data,
-      [name]: value,
-    });
-    
-  };
-
-   const handleSubmit= async (e)=> {
-      e.preventDefault();
-      if(data.password == data.password_confirmation)
+const onSubmit= async(data)=>{
+     if(data.password == data.password_confirmation)
       {
-        setisSubmited(true)
-      await register(data)
-       navigate('/')
+        await singin(data)
+         navigate('/')
       }
       else{
         console.log(error)
         /// reset form's passwords
         console.log('passwords do not match'); 
+        reset()
         // user's passwords do not match
       }
-      
-  }
+
+    }
+  
   
   return (
     <section className='register'>
     <div className='container'>
 
       <h2> Create an Account</h2>
-      <form className='register'
-        onSubmit={handleSubmit}
-      >
-      <label>Name</label>
-      <input name='name'
-            type='text'
-            placeholder='Fullname'
-            value={data.name}  
-            onChange={handleChange}    
-      />
-      <label>Email</label>
-      <input name='email'
-          placeholder='Example user@email.com'
-            type='email'
-            value={data.email}      
-            onChange={handleChange}    
+      <form onSubmit={handleSubmit(onSubmit)}>
 
-      />
-      <label>Passowrd</label>
-      <input name='password'
-      placeholder='Enter your passowrd'
-            type='password'
-            value={data.password}      
-            onChange={handleChange}    
+      <label>Name <span style={{color:'red'}}>*</span></label>
 
-      />
-      <label>Passowrd confirmation</label>
-      <input name='password_confirmation'
-      placeholder='Confirm your passowrd'
+      <input
+            {...register("name", 
+            {
+              required:'Name is required',
+            minLength: {
+            value: 4,
+            message: 'Name must be at least 5 characters'
+            }
+            })}
+            aria-invalid={errors.name ? "true" : "false"}
+          />
+          {errors.name && <p role="alert">{errors.name.message}</p>}
 
-            type='password'
-            value={data.password_confirmation}   
-            onChange={handleChange}    
-  
-      />
-      <button type='submit'>Create Account</button>
+      <label>Email <span style={{color:'red'}}>*</span></label>
+       <input
+            {...register("email", {
+              required: 'Email is required',
+              pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: 'Invalid Email adress'
+              }
+            })}
+            aria-invalid={errors.email ? "true" : "false"}
+          />
+        {errors.email && <p role="alert">{errors.email.message}</p>}
+
+      <label>Passowrd <span style={{color:'red'}}>*</span></label>
+       <input
+          {...register("password", {
+            required: 'Password is required',
+            minLength: {
+              value: 5,
+              message: 'Password must be at least 5 characters long'
+            },
+          })}
+          type="password"
+          aria-invalid={errors.password ? "true" : "false"}
+        />
+            {errors.password && <p role="alert">{errors.password.message}</p>}
+
+      <label>Passowrd confirmation <span style={{color:'red'}}>*</span></label>
+       <input
+          {...register("password_confirmation", {
+            required: 'password_confirmation is required',
+            minLength: {
+              value: 5,
+              message: 'password_confirmation must be at least 5 characters long'
+            },
+          })}
+          type="password"
+          aria-invalid={errors.password_confirmation ? "true" : "false"}
+        />
+            {errors.password_confirmation && <p role="alert">{errors.password_confirmation.message}</p>}
+
+          <input className='submit' type="submit" />
       </form>
     </div>
     </section>

@@ -15,17 +15,16 @@ const Product = ({product}) => {
   return (
     <div className='product_item' onClick={hanldeBuying} >
       <div className='image-container' >
-      <img src={product.image} />
-
+           <img src={product.image} />
       </div>
   
       <div className='info'>
+          <h2>{product.name}</h2>
 
           <div className='price'>
             <p>{product.price}$ </p> 
-            <p>350$</p>
+            {/* <p>350$</p> */}
           </div>
-          <h2>{product.name}</h2>
           {/* <button onClick={hanldeBuying}>&rarr;</button> */}
           
         </div>

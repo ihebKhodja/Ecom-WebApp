@@ -1,0 +1,52 @@
+@use './variables' as v;
+
+
+.sidebar-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+
+    gap: 1em;
+
+    @media (min-width:40em) {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto;
+        justify-content: center;
+        align-items: start;
+    }
+    .sidebar{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        height: 100%;
+        margin:0rem auto;
+        gap: 0.1rem;
+
+        button{
+            background: v.$black;
+            width: 40%;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 0 auto;
+            text-align: center;
+            font-size: clamp(1rem, 1vw + 1rem, 2rem);
+            padding: 0.5rem 1em;
+            border:none;
+            color: v.$white;
+
+            &:first-child{
+            margin-top: 1em;
+
+            }
+            &:hover{
+            background: v.$green;
+
+            }
+            
+        }
+    }
+
+}

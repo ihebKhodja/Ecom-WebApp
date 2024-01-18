@@ -6,8 +6,11 @@ import '../styles/_Navbar.scss'
 
 
 
+
 function Navbar() {
-   
+  
+ 
+
   return (
 
     <nav className="navbar">
@@ -57,7 +60,8 @@ function Navbar() {
           <RiLoginBoxLine />
         </Link> */}
         <Link to={'/cart'}>
-          <div className="cart-icon"><PiBagSimpleBold className="icon"/></div>
+            <div className="cart-icon"><PiBagSimpleBold className="icon"/></div>
+
         </Link>
       </div>
         

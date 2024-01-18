@@ -7,7 +7,7 @@ export const useRegister = () => {
     const[error, setError]= useState(null);
     const {dispatch} =useAuthContext()
 
-    const register = async (data)=>{
+    const singin = async (data)=>{
       
       await axios.post('/register',data
       ).then(async function(response){
@@ -22,5 +22,5 @@ export const useRegister = () => {
         
     }
     
-  return {register, error}
+  return {singin, error}
 }   

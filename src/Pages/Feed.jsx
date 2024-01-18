@@ -4,6 +4,9 @@ import { useProducts } from '../Hooks/useProducts'
 import { ProductsContext } from '../Contexts/ProductsContext'
 import '../styles/_Feed.scss'
 import {productsList} from '../../products'
+import Loader from './Loader'
+import FilterList from '../Components/FilterList'
+import { SideBar } from '../Components/SideBar'
 
 
 const Feed = () => {
@@ -32,20 +35,9 @@ const Feed = () => {
       <h2 className='title' >Featured Products</h2>
           {
             isLoading ?
-          <div className='products_list'>
-
-            {/* { Array.isArray(productsList) ? productsList.map((product) => */}
-            {  Array.isArray(state.productsList)? state.productsList.map((product)=>
-                  ( <Product key={product.id} product={product} />)
-                )
-                :
-                console.log('product list is not a array')
-                }
-          </div>
+            <SideBar productsList={state.productsList}/>
           :
-          <div>
-            Empty list animation
-          </div>
+          <Loader />
         
           }
     </div>

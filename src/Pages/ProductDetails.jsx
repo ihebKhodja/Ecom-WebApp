@@ -8,6 +8,8 @@ import { CartItemsContext } from "../Contexts/CartItemsContext"
 import '../styles/_ProductDetails.scss'
 import { IoMdAdd } from "react-icons/io";
 import { IoRemove } from "react-icons/io5";
+import Loader from "./Loader"
+import PopUp from "../Components/PopUp"
 
 
 
@@ -15,6 +17,7 @@ export const ProductDetails = () => {
 
   let {id} = useParams()
   const[quantity, setQuantity]=useState(1)
+  const [showPopup, setShowPopup]=useState(false)
   
   const {...state }=useContext(ProductsContext)
   const {user, token}=useAuthContext()
@@ -47,6 +50,10 @@ export const ProductDetails = () => {
         addToCart()
         // pop up 
         console.log('send')
+        setShowPopup(true)
+        setTimeout(() => {
+          setShowPopup(false)
+    }, 3500);
       }
     }
     // //  add to cart 
@@ -141,15 +148,21 @@ useEffect (()=>{
                </div>
                 <div className='add-to-cart'>
                   <button onClick={handleAddingToCart}>Add to Cart</button>
+                   { showPopup ? 
+             <PopUp message='Item added to cart' />
+                  :
+                  null
+              }
                 </div>
+                
           </div>
            
         </div>
+       
+          
     </div>
       :
-      <div>
-        Loading animation
-      </div>
+      <Loader />
 
     }
 </section>
